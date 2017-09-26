@@ -1,0 +1,105 @@
+<main>
+  <div class="card">
+    <div class="card-header">
+      <h1>Send mail</h1>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #emailForm="ngForm">
+        <div class="form-group">
+          <input 
+            type="email" 
+            id="input-to" 
+            aria-describedby="to" 
+            placeholder="To" 
+            class="form-control"
+            required
+            name="to"
+            [class.wrong]="isValidEmail"
+            (change)="validateEmail()"
+            [(ngModel)]="model.to" />
+          <div *ngIf="isValidEmail === false">
+            <div class="alert alert-danger">
+              At least one email adresses is incorrect
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input 
+            type="email-cc" 
+            id="input-cc" 
+            aria-describedby="cc" 
+            placeholder="CC" 
+            class="form-control"
+            name="cc"
+            [(ngModel)]="model.cc" />
+        </div>
+        <div class="form-group">
+          <input 
+            type="email-bcc" 
+            id="input-bcc" 
+            aria-describedby="bcc" 
+            placeholder="BCC" 
+            class="form-control"
+            name="bcc"
+            [(ngModel)]="model.bcc" />
+        </div>
+        <div class="form-group">
+          <input 
+            type="text" 
+            id="input-subject" 
+            placeholder="Subject" 
+            class="form-control"
+            required 
+            maxlength="100"
+            name="subject" 
+            (change)="validateSubject()"
+            [(ngModel)]="model.subject" />
+          <div *ngIf="isValidSubject === false">
+            <div class="alert alert-danger">
+              You must specify a subject
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <textarea 
+            id="input-message" 
+            rows="5" 
+            placeholder="Message" 
+            class="form-control"
+            required 
+            name="message" 
+            (change)="validateMessage()"
+            [(ngModel)]="model.message"></textarea>
+          <div *ngIf="isValidMessage === false">
+            <div class="alert alert-danger">
+              Message must not remain empty
+            </div>
+          </div>
+        </div>
+        <div class="form-group thumbnails">
+          <img *ngFor="let url of dataUrls" class="thumbnail" src="{{url}}">
+        </div>
+        <div class="form-group form-btn-group">
+          <i id="button_attach_file" class="form-btn material-icons" (click)="attachFile()">attach_file</i>
+          <input 
+            #fileInput 
+            multiple 
+            hidden="true" 
+            type="file" 
+            id="input-files" 
+            id="exampleFormControlFile1" 
+            class="form-control-file"
+            accept="image/*"
+            (change)="onAttachFile()"/>
+          <button 
+            type="submit" 
+            class="btn btn-primary form-submit-btn form-btn"
+            [ngClass]="{ disabled: isFormValid == false }">
+            <i class="material-icons">arrow_forward</i>
+            <span>&nbsp;&nbsp;Send</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>

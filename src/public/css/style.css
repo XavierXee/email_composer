@@ -1,0 +1,125 @@
+* {
+	font-family: 'Roboto', sans-serif;
+}
+
+main {
+	background: rgba(85,186,240,1);
+	background: -moz-linear-gradient(top, rgba(85,186,240,1) 0%, rgba(113,222,217,1) 58%, rgba(113,222,217,1) 77%, rgba(119,204,219,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(85,186,240,1)), color-stop(58%, rgba(113,222,217,1)), color-stop(77%, rgba(113,222,217,1)), color-stop(100%, rgba(119,204,219,1)));
+	background: -webkit-linear-gradient(top, rgba(85,186,240,1) 0%, rgba(113,222,217,1) 58%, rgba(113,222,217,1) 77%, rgba(119,204,219,1) 100%);
+	background: -o-linear-gradient(top, rgba(85,186,240,1) 0%, rgba(113,222,217,1) 58%, rgba(113,222,217,1) 77%, rgba(119,204,219,1) 100%);
+	background: -ms-linear-gradient(top, rgba(85,186,240,1) 0%, rgba(113,222,217,1) 58%, rgba(113,222,217,1) 77%, rgba(119,204,219,1) 100%);
+	background: linear-gradient(to bottom, rgba(85,186,240,1) 0%, rgba(113,222,217,1) 58%, rgba(113,222,217,1) 77%, rgba(119,204,219,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#55baf0', endColorstr='#77ccdb', GradientType=0 );
+	width: 100%;
+	height: 100%;
+	padding: 6vw 24vw 24vw;
+}
+
+h1 {
+	font-weight: 300;
+	font-size: 1.5rem;
+}
+
+textarea {
+    resize: none;
+}
+
+button[type=submit] {
+	border: none !important;
+	background: rgb(91, 188, 236);
+	color: #fff;
+	border-radius: 30px;
+	padding: 10px;	
+	padding: 6px 20px;
+	display: inline-flex;
+	vertical-align: middle;
+}
+
+.ng-dirty.ng-invalid {
+	border-color: red !important;
+}
+
+.disabled {
+	border: none !important;
+	background: #d1d1d1 !important;
+	color: #495057 !important;
+	border-radius: 30px;
+	padding: 10px;
+	padding: 6px 20px;
+	display: inline-flex;
+	vertical-align: middle;
+}
+
+#button_attach_file {
+	color: #495057;
+	border: 1px solid rgba(0,0,0,.15);
+	border-radius: 50%;
+	padding: 10px;
+}
+
+.ng-invalid {
+	/*border-color: red;*/
+}
+
+.alert-danger {
+	color: red;
+	background: none;
+	border:none;
+}
+
+.thumbnails {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+
+.thumbnail {
+	width: 10vw;
+	height: 10vw;
+	margin-bottom: 1vw;
+	border-radius: 5px;
+}
+
+.card {
+    margin: 0 auto;
+    border: none;
+}
+
+.card .card-header {
+	padding: 30px;
+	background: rgb(28,66,88);
+	color: #fff;
+}
+
+.card .card-body {
+	padding: 2.5rem;
+}
+
+.form-btn {
+	height: 46px;
+}
+
+.form-btn-group {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+
+.form-submit-btn span, .form-submit-btn i {
+	line-height: 36px;
+}
+
+@media (max-width: 700px) {
+	
+	main {
+		padding: 0px;
+	}
+
+	.thumbnail {
+    	width: 20vw;
+    	height: 20vw;
+    	margin-bottom: 4vw;
+	}
+
+}
